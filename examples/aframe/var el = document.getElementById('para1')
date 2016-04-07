@@ -1,0 +1,4 @@
+var el = document.getElementById('para1')
+var object3D = el.object3D
+var position = el.getComputedAttribute('position')
+var rotation = el.getComputedAttribute('rotation')

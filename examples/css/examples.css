@@ -1,0 +1,132 @@
+.franklin-thin,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    font-style: normal
+}
+
+.screen {
+    z-index: 1;
+    color: #fff;
+    position: absolute
+}
+
+
+@font-face {
+    font-family: FranklinITCProThin;
+    src: url(//css.washingtonpost.com/video/resources/assets/fonts/webtype/Franklin-ITC-Pro-Thin/56bcaf21-92ef-486a-836d-19f261762e57-2.eot);
+    src: url(//css.washingtonpost.com/video/resources/assets/fonts/webtype/Franklin-ITC-Pro-Thin/56bcaf21-92ef-486a-836d-19f261762e57-2.eot?) format("embedded-opentype"), url(//css.washingtonpost.com/video/resources/assets/fonts/webtype/Franklin-ITC-Pro-Thin/56bcaf21-92ef-486a-836d-19f261762e57-3.woff) format("woff"), url(//css.washingtonpost.com/video/resources/assets/fonts/webtype/Franklin-ITC-Pro-Thin/56bcaf21-92ef-486a-836d-19f261762e57-1.ttf) format("truetype"), url(//css.washingtonpost.com/video/resources/assets/fonts/webtype/Franklin-ITC-Pro-Thin/56bcaf21-92ef-486a-836d-19f261762e57-4.svg#web) format("svg");
+    font-style: normal;
+    font-weight: 400
+}
+
+.franklin-thin {
+    font-family: FranklinITCProThin!important;
+    line-height: normal
+}
+
+body {
+   background-color:black;
+   overflow: hidden;
+   z-index:-1;
+}
+
+.brain-image img{
+  position: relative;
+  left: 450px;
+  top: 10;
+  width: 50%;
+  opacity: 0.5;
+  z-index:0;
+
+}
+
+
+.flex-view {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%
+}
+
+
+#intro{
+    height: 100%;
+    width: 100%
+}
+
+#intro .box,
+#select .box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative
+}
+
+#intro .box>div,
+#select .box>* {
+    padding: 1rem;
+    position: relative;
+    z-index: 1
+}
+
+#select .box {
+    justify-content: space-between
+}
+
+#intro {
+    font-family: FranklinITCProThin
+}
+
+#intro .box {
+    justify-content: center;
+    width: 80%
+}
+
+#intro .box .title {
+    padding-bottom: 2rem
+}
+
+#intro .box .title h1 {
+    margin: 0;
+    font-size: 6rem;
+    height: 5rem;
+    letter-spacing: .8rem
+}
+
+#intro .box .title h3 {
+    font-size: 1.4rem;
+    letter-spacing: .24rem;
+    margin: 0
+}
+
+
+a:visited{ 
+  color:white;
+ }
+
+#intro .box .display a {
+    width: 100px;
+    height: 50px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: fixed;
+    z-index: 99;
+    left: 870px;
+    top: 550px;
+    display: inline-block;
+    text-decoration: none
+}
+
+
