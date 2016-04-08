@@ -14,7 +14,9 @@
   </head>
 
   <body>
-    <a-scene proxy-controls="debug: true; enableOverlay: true;">
+    <div id="load"></div>
+      <div id="contents">
+      <a-scene proxy-controls="debug: true; enableOverlay: true;">
       <a-entity camera position="0 1 10" look-controls keyboard-controls="cameraUse: true" >
       <a-cursor color="#2E3A87"></a-cursor>
       </a-entity>
@@ -108,15 +110,12 @@
         visible="true"></a-entity>
         <a-entity geometry="primitive:plane;width:10;height:10" rotation="0 -90 0"  material="src:url(assets/img/blue_grid.png); repeat:1 2; transparent: true;"
         visible="true"></a-entity>
-    </a-entity>
+      </a-entity>
 
-
-
-    
-
-     </a-scene>
+      </a-scene>
+    </div>
     <script src="aframebrowser.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
   </body>
 </html>

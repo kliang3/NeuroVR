@@ -20,6 +20,7 @@
     }
   });
 
+
   setTimeout(function() {
     $("#control-button").click();
   }, 0);
