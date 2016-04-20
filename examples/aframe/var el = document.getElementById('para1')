@@ -1,4 +1,137 @@
-var el = document.getElementById('para1')
-var object3D = el.object3D
-var position = el.getComputedAttribute('position')
-var rotation = el.getComputedAttribute('rotation')
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Patient 1</title>
+     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+     <script src="aframe-keyboard-controls.js"></script>
+     <script src="line-drawer.js"></script>
+     <script src="../../bundle.js"></script>
+     <script src="aframe-extra.js"></script>
+
+     <link rel="icon" type="image/png" href="img/brain.png">
+     <link type="text/css" href="aframe.css" rel="stylesheet">
+   
+  </head>
+
+  <body>
+
+  <div id="loading" style="display: none;">
+      <img id="loading-image" src="assets/img/loading.gif" alt="Loading..." />
+  </div>
+
+      <a-scene stats proxy-controls="debug: true; enableOverlay: true;">
+      <a-entity camera position="0 1 10" look-controls keyboard-controls="cameraUse: true">
+      <a-cursor color="#2E3A87"></a-cursor>
+      </a-entity>
+
+     
+
+      <a-entity text="text: Patient ID: 562313; size: 0.3;" position="-6 -5 0"
+      material="color:white" >
+      </a-entity> 
+
+      <a-assets>
+        <a-asset-item id="cerebrum-obj" src="assets/brain2/cerebrum.obj"></a-asset-item>
+        <a-asset-item id="cerebrum-mtl" src="assets/brain2/cerebrum.obj.mtl"></a-asset-item>
+
+        <a-asset-item id="cc1-obj" src="assets/brain2/cc1.obj"></a-asset-item>
+        <a-asset-item id="cc1-mtl" src="assets/brain2/cc1.obj.mtl"></a-asset-item>
+
+        <a-asset-item id="CC2-obj" src="assets/brain2/CC2.obj"></a-asset-item>
+        <a-asset-item id="CC2-mtl" src="assets/brain2/CC2.obj.mtl"></a-asset-item>
+
+        <a-asset-item id="cerebellum-obj" src="assets/brain2/cerebellum.obj"></a-asset-item>
+        <a-asset-item id="cerebellum-mtl" src="assets/brain2/cerebellum.obj.mtl"></a-asset-item>
+
+        <a-asset-item id="fornix-obj" src="assets/brain2/fornix.obj"></a-asset-item>
+        <a-asset-item id="fornix-mtl" src="assets/brain2/fornix.obj.mtl"></a-asset-item>
+
+        <a-asset-item id="pituitary-obj" src="assets/brain2/pituitary.obj"></a-asset-item>
+        <a-asset-item id="pituitary-mtl" src="assets/brain2/pituitary.obj.mtl"></a-asset-item>
+
+        <a-asset-item id="pons-obj" src="assets/brain2/pons.obj"></a-asset-item>
+        <a-asset-item id="pons-mtl" src="assets/brain2/pons.obj.mtl"></a-asset-item>
+
+        <a-asset-item id="thalamus-obj" src="assets/brain2/thalamus.obj"></a-asset-item>
+        <a-asset-item id="thalamus-mtl" src="assets/brain2/thalamus.obj.mtl"></a-asset-item>
+
+        <img id="xgrid" src="assets/img/red_grid.png">
+        <img id="ygrid" src="assets/img/blue_grid.png">
+        <img id="zgrid" src="assets/img/green_grid.png">
+      </a-assets>
+
+
+
+      <a-entity id="parent" keyboard-controls="cameraUse: false" position="-1 0 0 "> 
+
+        <a-obj-model src="#cerebrum-obj" mtl="#cerebrum-mtl" position="-3 0 0" rotation="0 0 0">
+        </a-obj-model>
+
+        <a-obj-model src="#cc1-obj" mtl="#cc1-mtl" position="-3 0 0" rotation="0 0 0">
+        </a-obj-model>
+
+        <a-obj-model src="#CC2-obj" mtl="#CC2-mtl" position="-3 0 0" rotation="0 0 0">
+        </a-obj-model>
+        
+        <a-obj-model src="#cerebellum-obj" mtl="#cerebellum-mtl" position="-3 0 0" rotation="0 0 0">
+        </a-obj-model>
+
+        <a-obj-model src="#fornix-obj" mtl="#fornix-mtl" position="-3 0 0" rotation="0 0 0">
+        </a-obj-model>
+
+        <a-obj-model src="#pituitary-obj" mtl="#pituitary-mtl" position="-3 0 0" rotation="0 0 0">
+        </a-obj-model>
+
+        <a-obj-model src="#pons-obj" mtl="#pons-mtl" position="-3 0 0" rotation="0 0 0">
+        </a-obj-model>
+
+        <a-obj-model src="#thalamus-obj" mtl="#thalamus-mtl" position="-3 0 0" rotation="0 0 0">
+        </a-obj-model>
+
+      </a-entity>
+      
+
+      <a-sky id="backgroundCol" color="black"></a-sky>
+
+
+      <!--Lighting-->     
+      <a-light type="ambient" color="white"></a-light>
+    
+
+      <!--axis -->
+     
+        <a-cylinder id="xaxis"  position="0 0 0" radius="0.01" color="red" 
+        scale="1 15 1" rotation="0 0 90" visible="true"></a-cylinder>
+        <a-cylinder  id="zaxis" position="0 0 0" radius="0.01" color="green" 
+        scale="1 15 1" rotation="90 0 0" visible="true"></a-cylinder>
+        <a-cylinder id="yaxis" position="0 0 0" radius="0.01" color="blue" 
+        scale="1 15 1" rotation="0 90 0" visible="true"></a-cylinder>
+     
+      <!--grid-->
+      <a-entity id="zgrid">
+        <a-entity geometry="primitive:plane;width:10;height:10" rotation="-90 0 0" material="src:#zgrid; repeat:1 2; transparent: true;"
+        visible="true"></a-entity>
+        <a-entity geometry="primitive:plane;width:10;height:10" rotation="90 0 0" material="src:#zgrid; repeat:1 2; transparent: true;"
+        visible="true"></a-entity>
+      </a-entity>
+
+      <a-entity id="xgrid">
+        <a-entity geometry="primitive:plane;width:10;height:10" rotation="0 -180 0"  material="src:#xgrid; repeat:1 2; transparent: true;"
+        visible="true"></a-entity>
+        <a-entity geometry="primitive:plane;width:10;height:10" rotation="0 0 0"  material="src:#xgrid; repeat:1 2; transparent: true;"
+        visible="true"></a-entity>
+     </a-entity>
+
+     <a-entity id="ygrid" >
+        <a-entity geometry="primitive:plane;width:10;height:10" rotation="0 90 0"  material="src:#ygrid; repeat:1 2; transparent: true;"
+        visible="true"></a-entity>
+        <a-entity geometry="primitive:plane;width:10;height:10" rotation="0 -90 0"  material="src:#ygrid; repeat:1 2; transparent: true;"
+        visible="true"></a-entity>
+      </a-entity>
+
+      </a-scene>
+    <script src="aframebrowser.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  </body>
+</html>

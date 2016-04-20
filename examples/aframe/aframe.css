@@ -1,8 +1,22 @@
-#load{
-    width:100%;
-    height:100%;
-    z-index:1;
-    background:url("assets/img/loading.gif") no-repeat center center rgba(0,0,0,0.25)
+#loading {
+   width: 100%;
+   height: 100%;
+   top: 0px;
+   left: 0px;
+   position: fixed;
+   display: relative;
+   opacity: 1.0;
+   background-color: black;
+   z-index: 99;
+   text-align: center;
+}
+
+#loading-image {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:300px;
+  z-index: 100;
 }
 
 

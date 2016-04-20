@@ -104,7 +104,7 @@
       
       reader.file = files[0];
       
-      reader.onloadend = function(event) {
+      reader.onloadend = function(event) {       
         callback(event.target.result, filename, options);
       };
 

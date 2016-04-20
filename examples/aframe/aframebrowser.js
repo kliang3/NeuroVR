@@ -1,16 +1,3 @@
-document.onreadystatechange = function () {
-  var state = document.readyState
-  if (state == 'interactive') {
-       document.getElementById('contents').style.visibility="hidden";
-  } else if (state == 'complete') {
-      setTimeout(function(){
-         document.getElementById('interactive');
-         document.getElementById('load').style.visibility="hidden";
-         document.getElementById('contents').style.visibility="visible";
-      },1000);
-  }
-}
-
 // add axis if previously selected 
 var xaxis = document.querySelector("#xaxis");
 var yaxis = document.querySelector("#yaxis");
@@ -34,6 +21,12 @@ localStorage.getItem('gridZ')==="false"? zgrid.setAttribute('visible', false): z
 
 
 //background color
+var backgroundCol = localStorage.getItem("backgroundCol");
+backgroundCol=backgroundCol.slice(2);
+backgroundCol='#'+backgroundCol
+var aframeBackground = document.querySelector("#backgroundCol");
+aframeBackground.setAttribute('color', backgroundCol);
+
 
 // add model from previously selected 
 

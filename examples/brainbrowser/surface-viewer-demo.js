@@ -21,7 +21,7 @@
     return;
   }
 
-  $.get("models/atlas-labels.txt", function(data) {
+  $.get("models/", function(data) {
     var lines = data.split("\n");
     var regex = /'(.+)'\s+(\d+)/;
 
