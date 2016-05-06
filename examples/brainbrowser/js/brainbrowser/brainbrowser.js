@@ -110,12 +110,12 @@
     var canvas = document.createElement("canvas");
     var gl = null;
 
-    CANVAS_ENABLED = !!canvas;
-    WEB_WORKERS_ENABLED = !!window.Worker;
+    CANVAS_ENABLED = !!canvas; //document canvas element enabled? 
+    WEB_WORKERS_ENABLED = !!window.Worker; //web worker enabled? 
 
     try {
       if(canvas && window.WebGLRenderingContext) {
-        gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+        gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl"); //getcontext() method returns an object that provides methods and properties for drawing on the canvas
       }
       WEBGL_ENABLED = !!gl;
     } catch(e) {

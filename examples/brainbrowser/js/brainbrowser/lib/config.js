@@ -27,6 +27,9 @@
     * Will set the **name** property in the **spectral** namespace of the
     * **color_maps** namespace.
     *
+    *-->Color_maps
+    *------> name 
+    *----------->spectral
     */
     set: function(config_string, value) {
       config_string = config_string || "";
@@ -34,7 +37,8 @@
 
       config_params.push(value);
      
-      config.set.apply(config, config_params);
+      config.set.apply(config, config_params); // input is the config object, config_params are the arguments an array, where 
+      //the last element is the value to be added (leaf at the end of the tree)
     },
 
     /**
@@ -61,7 +65,7 @@
     * BrainBrowser.set("color_maps.spectral.name", "Spectral")
     * ```
     *
-    * the the following **get** call:
+    * then the following **get** call:
     *
     * ```js
     * BrainBrowser.set("color_map.spectral")
@@ -78,7 +82,8 @@
       config_string = config_string || "";
       var config_params = config_string.split(".");
 
-      return config.get.apply(config, config_params);
+      return config.get.apply(config, config_params); //returns the value from the CreateTreeStore.getAttention
+      //config is the name of the function createTreeStore().set
     }
   };
 

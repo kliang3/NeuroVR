@@ -32,7 +32,15 @@ BrainBrowser.SurfaceViewer.modules.annotations = function(viewer) {
     add: function(vertex, data, options) {
       options = options || {};
 
-      var model_name = getModelName(options);
+      var model_name = getModelName(options); //
+
+     
+      /*
+
+      var model_name = options.model_name || null;
+      model_name = viewer.model.children[0].userData.model_name; 
+
+      */
       var annotation, position;
 
       if (model_name) {

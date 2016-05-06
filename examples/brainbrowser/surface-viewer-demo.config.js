@@ -28,6 +28,11 @@
     {
       name: "Green",
       url: "color-maps/green.txt",
+    },
+    {
+
+      name: "Virids", 
+      url: "color-maps/viridis.txt"
     }
   ]);
 

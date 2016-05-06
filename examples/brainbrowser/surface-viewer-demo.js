@@ -881,6 +881,7 @@
     // selected.
     $("#obj_file_submit").click(function() {
       var format = $(this).closest(".file-select").find("option:selected").val();
+      console.log(format);
       showLoading();
       viewer.loadModelFromFile(document.getElementById("objfile"), {
         format: format,
@@ -890,13 +891,63 @@
       return false;
     });
 
-    $("#data-submit").click(function() {
-      var format = $(this).closest(".file-select").find("option:selected").val();
-      var file = document.getElementById("datafile");
+ 
+    $("#mniobj").change(function() {
+      var format = "mniobj";
+      console.log(format);
+      showLoading();
+      viewer.loadModelFromFile(document.getElementById("mniobj"), {
+        format: format,
+        complete: hideLoading
+      });
+
+      return false;
+    });
+
+     $("#freesurferbin").change(function() {
+      var format ="freesurferbin";
+      console.log(format);
+      showLoading();
+      viewer.loadModelFromFile(document.getElementById("freesurferbin"), {
+        format: format,
+        complete: hideLoading
+      });
+
+      return false;
+    });
+
+    $("#freesurferasc").change(function() {
+      var format = "freesurferasc";
+      console.log(format);
+      var file = document.getElementById("freesurferasc");
       viewer.loadIntensityDataFromFile(file, {
         format: format,
         blend: true
       });
+    });
+
+    $("#wavefrontobj").change(function() {
+      var format = "wavefrontobj";
+      console.log(format);
+      showLoading();
+      viewer.loadModelFromFile(document.getElementById("wavefrontobj"), {
+        format: format,
+        complete: hideLoading
+      });
+
+      return false;
+    });
+
+    $("#json").change(function() {
+      var format = "json";
+      console.log(format);
+      showLoading();
+      viewer.loadModelFromFile(document.getElementById("json"), {
+        format: format,
+        complete: hideLoading
+      });
+
+      return false;
     });
 
     // Load a color map select by the user.
@@ -909,7 +960,9 @@
     });
 
     // Load first model.
-    $("a.example[data-example-name=atlas]").click();
+    $("a.example[data-example-name=cortical_thickness]").click();
+
+
 
     // If two color maps are loaded to be blended, create
     // slider to control the blending ratios.

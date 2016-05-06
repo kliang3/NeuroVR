@@ -22,9 +22,9 @@
       </a-entity>
       
       <a-assets>
-        <img id="xgrid" src="assets/img/red_grid.png">
-        <img id="ygrid" src="assets/img/blue_grid.png">
-        <img id="zgrid" src="assets/img/green_grid.png">
+        <img id="xgridimg" src="assets/img/red_grid.png">
+        <img id="ygridimg" src="assets/img/blue_grid.png">
+        <img id="zgridimg" src="assets/img/green_grid.png">
       </a-assets>
       
 
@@ -57,23 +57,23 @@
      
       <!--grid-->
       <a-entity id="zgrid">
-        <a-entity geometry="primitive:plane;width:10;height:10" rotation="-90 0 0" material="src:#zgrid; repeat:1 2; transparent: true;"
+        <a-entity geometry="primitive:plane;width:10;height:10" rotation="-90 0 0" material="src:#zgridimg; repeat:1 2; transparent: true;"
         visible="true"></a-entity>
-        <a-entity geometry="primitive:plane;width:10;height:10" rotation="90 0 0" material="src:#zgrid; repeat:1 2; transparent: true;"
+        <a-entity geometry="primitive:plane;width:10;height:10" rotation="90 0 0" material="src:#zgridimg; repeat:1 2; transparent: true;"
         visible="true"></a-entity>
       </a-entity>
 
       <a-entity id="xgrid">
-        <a-entity geometry="primitive:plane;width:10;height:10" rotation="0 -180 0"  material="src:#xgrid; repeat:1 2; transparent: true;"
+        <a-entity geometry="primitive:plane;width:10;height:10" rotation="0 -180 0"  material="src:#xgridimg; repeat:1 2; transparent: true;"
         visible="true"></a-entity>
-        <a-entity geometry="primitive:plane;width:10;height:10" rotation="0 0 0"  material="src:#xgrid; repeat:1 2; transparent: true;"
+        <a-entity geometry="primitive:plane;width:10;height:10" rotation="0 0 0"  material="src:#xgridimg; repeat:1 2; transparent: true;"
         visible="true"></a-entity>
      </a-entity>
 
      <a-entity id="ygrid" >
-        <a-entity geometry="primitive:plane;width:10;height:10" rotation="0 90 0"  material="src:#ygrid; repeat:1 2; transparent: true;"
+        <a-entity geometry="primitive:plane;width:10;height:10" rotation="0 90 0"  material="src:#ygridimg; repeat:1 2; transparent: true;"
         visible="true"></a-entity>
-        <a-entity geometwry="primitive:plane;width:10;height:10" rotation="0 -90 0"  material="src:#ygrid; repeat:1 2; transparent: true;"
+        <a-entity geometwry="primitive:plane;width:10;height:10" rotation="0 -90 0"  material="src:#ygridimg; repeat:1 2; transparent: true;"
         visible="true"></a-entity>
       </a-entity>
 

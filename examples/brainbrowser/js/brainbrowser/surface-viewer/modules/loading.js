@@ -460,7 +460,7 @@ BrainBrowser.SurfaceViewer.modules.loading = function(viewer) {
         throw new Error(error_message);
       }
 
-      model_data.colors = model_data.colors || new Float32Array([0.7, 0.7, 0.7, 1.0]);
+      model_data.colors = model_data.colors || new Float32Array([.7, 0.7, 0.7, 1.0]);
 
       if (BrainBrowser.WEBGL_UINT_INDEX_ENABLED) {
         loadIndexedModel(model_data, callback);

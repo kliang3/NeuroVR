@@ -28,7 +28,7 @@ h4 {
   display: none;
   font-size: 14px;
   position: absolute;
-  top: 40px;
+  top: 60px;
   left: 20px;
   background-color: #808080;
   border-radius: 10px;
@@ -48,17 +48,6 @@ h4 {
   padding-right: 8px;
 }
 
-#control-button {
-  position: absolute;
-  top: 40px;
-  right: 190px;
-}
-
-#control-button2 {
-  position: absolute;
-  top: 40px;
-  right: 70px;
-}
 
 
 #brainbrowser { 

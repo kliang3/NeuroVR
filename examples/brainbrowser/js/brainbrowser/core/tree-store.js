@@ -32,9 +32,16 @@
       * ```
       *
       */
+      // a tree structure 
+      // 1: 
+      // 2: 
+          //1: 
+          //2: 
+      //3: 
       set: function() {
-        var value = arguments[arguments.length - 1];
-        var keys = Array.prototype.slice.call(arguments, 0, arguments.length - 1);
+        var value = arguments[arguments.length - 1]; //only the value can be stored in the last argument 
+        var keys = Array.prototype.slice.call(arguments, 0, arguments.length - 1); //converts arguments into an array [x,y,z] 
+        //provides the key (x,y,z) where to store the value 
         var subtree = tree;
         var current_key;
         var i, count;
@@ -54,12 +61,11 @@
             subtree[current_key] = {};
           }
 
-          subtree = subtree[current_key];
+          subtree = subtree[current_key]; //iterates all the place to where to place the value 
         }
+        current_key = keys[i]; 
 
-        current_key = keys[i];
-
-        subtree[current_key] = value;
+        subtree[current_key] = value; //places the value at the last spot of the key (eg. Z when key = x, y, z)
       },
 
       /**
@@ -80,7 +86,7 @@
       *
       */
       get: function() {
-        var keys = Array.prototype.slice.call(arguments);
+        var keys = Array.prototype.slice.call(arguments); //turns arguments into an array 
         var subtree = tree;
         var current_key;
         var i, count;
@@ -94,10 +100,10 @@
           if (subtree[current_key] === undefined) {
             return null;
           }
-          subtree = subtree[current_key];
+          subtree = subtree[current_key]; //again goes to the subtree of the desired area 
         }
 
-        current_key = keys[i];
+        current_key = keys[i]; // goes the final tip of the tree holding the value (z for x,y,z)
 
         return subtree[current_key] !== undefined ? subtree[current_key] : null;
       },
@@ -121,6 +127,7 @@
       * ```
       *
       */
+      
       remove: function() {
         var keys = Array.prototype.slice.call(arguments);
         var subtree = tree;
@@ -137,13 +144,13 @@
           subtree = subtree[current_key];
         }
 
-        current_key = keys[i];
+        current_key = keys[i]; //becomes the final key (i is incremented once after loop, becomes keys.length-1)
 
         result = subtree[current_key];
 
         subtree[current_key] = undefined;
 
-        return result;
+        return result; //returns the removed value 
       },
 
       /**

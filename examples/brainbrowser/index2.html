@@ -19,9 +19,7 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <style type="text/css">
 
-    </style>
 
   </head>
   <body>
@@ -34,20 +32,10 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Load Data
         </a>
         <ul class="dropdown-menu">
-          <li class="dropdown-header">Load Models</li>
-          <li><input type="file" id="mniobj" style="display: none;"  /><a href="#" onclick="document.getElementById('mniobj').click();"/>MNI OBJ</a></li>
-          <li><input type="file" id="freesurferbin" style="display: none;" /><a href="#" onclick="document.getElementById('freesurferbin').click();">Freesurfer Binary</a></li>
-          <li><input type="file" id="freesurferasc" style="display: none;" /><a href="#" onclick="document.getElementById('freesurferasc').click();">Freesurfer ASC</a></li>
-          <li><input type="file" id="wavefrontobj" style="display: none;" /><a href="#" onclick="document.getElementById('wavefrontobj').click();">Wavefront OBJ</a></li>
-          <li><input type="file" id="json" style="display: none;" /><a href="#" onclick="document.getElementById('json').click();">JSON</a></li>
-           <li class="divider"></li>
-           <li class="dropdown-header">Load Per-vertex Data</li>
-          <li><input type="file" id="textdata" style="display: none;" /><a href="#" onclick="document.getElementById('textdata').click();"/>Text</a></li>
-          <li><input type="file" id="freesurferbindata" style="display: none;" /><a href="#" onclick="document.getElementById('freesurferbindata').click();">Freesurfer Binary</a></li>
-          <li><input type="file" id="freesurferascdata" style="display: none;" /><a href="#" onclick="document.getElementById('freesurferascdata').click();">Freesurfer ASC</a></li>
-          <li class="divider"></li>
-           <li class="dropdown-header">Load Color Map</li>
-            <li><input type="file" id="colorMap" style="display: none;" /><a href="#" onclick="document.getElementById('colorMap').click();">Text</a></li>
+          <li ><a href="#">MNI OBJ</a></li>
+          <li ><a href="#">Freesurfer Binary</a></li>
+          <li><a href="#">Freesurfer ASC</a></li>
+          <li ><a href="#">JSON</a></li>
         </ul>
       </li>
 
@@ -95,7 +83,23 @@
       <div id="controls">
         <div id="controls-content">
           <div id="surface_choice" class="box full_box">
-              
+            <h4>Load data</h4>
+              <div id="obj_file_select" class="file-select">
+                Object File:
+                <input type="file" name="objfile" id="objfile" ><br>
+                Format:
+                <select  id="obj_file_format" class="file-format" name="format">
+                  <option value="mniobj">MNI OBJ</option>
+                  <option value="freesurferbin">Freesurfer Binary</option>
+                  <option value="freesurferasc">Freesurfer ASC</option>
+                  <option value="wavefrontobj">Wavefront OBJ</option>
+                  <option value="json">JSON</option>
+                </select><br>
+                <div class="format-hint"></div>
+       
+                  <span id="obj_file_submit" class="button">Load</span><br>
+                
+              </div>
               <div id="data-file-select" class="file-select">
                 Per-vertex data: <input type="file" name="datafile" id="datafile" class="datafile"><br>
                 Format:
